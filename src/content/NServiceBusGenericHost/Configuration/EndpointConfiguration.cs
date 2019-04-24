@@ -39,7 +39,8 @@ namespace NServiceBusGenericHost.Configuration
             endpointConfiguration.AuditProcessedMessagesTo("audit"); //copy of message after processing will go here for servicecontroller
             endpointConfiguration.SendFailedMessagesTo("error"); //after specified retries is hit, message will be moved here for alerting and recovery
 
-            //TODO: Add production transport
+            //TODO: Add production transport; learning transport is not going to work well in docker container
+            // Learning transport in docker container will complain that there is no sln folder
             var transport = endpointConfiguration.UseTransport<LearningTransport>(); //for production ready, replace with Azure Service Bus, RabbitMQ or MSMQ
 
             //TODO: Add routing
