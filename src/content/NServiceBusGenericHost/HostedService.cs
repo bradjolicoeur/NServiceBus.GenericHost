@@ -4,7 +4,7 @@ using NServiceBus;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace ProducerEndpoint
+namespace NServiceBusGenericHost
 {
     internal class HostedService : IHostedService
     {

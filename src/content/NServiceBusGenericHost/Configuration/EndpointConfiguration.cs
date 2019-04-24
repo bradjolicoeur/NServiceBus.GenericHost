@@ -3,7 +3,7 @@ using System;
 using NServiceBus;
 using Microsoft.Extensions.Hosting;
 
-namespace NServiceBus.GenericHost.Template.Configuration
+namespace NServiceBusGenericHost.Configuration
 {
     public static class EndpointConfigurations
     {

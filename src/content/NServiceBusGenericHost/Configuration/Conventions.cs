@@ -1,6 +1,7 @@
-﻿using System;
+﻿using NServiceBus;
+using System;
 
-namespace NServiceBus.GenericHost.Template.Configuration
+namespace NServiceBusGenericHost.Configuration
 {
     //TODO: this can be moved to a shared assembly for the system
     public class NSBConventions

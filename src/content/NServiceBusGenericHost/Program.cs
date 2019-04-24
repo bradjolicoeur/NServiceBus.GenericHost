@@ -1,15 +1,13 @@
-﻿namespace NServiceBus.GenericHost.Template
+﻿namespace NServiceBusGenericHost
 {
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
-    using NServiceBus;
     using System;
     using System.Threading.Tasks;
-    using ProducerEndpoint;
     using Microsoft.Extensions.Hosting;
     using Microsoft.Extensions.Logging;
     using System.IO;
-    using NServiceBus.GenericHost.Template.Configuration;
+    using NServiceBusGenericHost.Configuration;
 
     class Program
     {
