@@ -1,0 +1,14 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Brad Jolicoeur",
+  "classifications": [ "NServiceBus", "Console" ],
+  "identity": "NServiceBusGenericHost",
+  "name": "NServiceBus Generic Host for console hosted endpoint",
+  "shortName": "nsbgenerichost",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "preferNameDirectory": true,
+  "sourceName": "NServiceBusGenericHost"
+}
