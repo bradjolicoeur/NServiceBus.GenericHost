@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <None Include=".template.config\template.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
