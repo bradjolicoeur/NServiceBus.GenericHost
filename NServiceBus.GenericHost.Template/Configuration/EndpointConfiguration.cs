@@ -7,7 +7,7 @@ namespace NServiceBus.GenericHost.Template.Configuration
     public static class EndpointConfigurations
     {
         //TODO: this can be moved to a shared assembly for the system
-        public static EndpointConfiguration ConfigureNSB(ServiceCollection serviceCollection, string endpointName)
+        public static EndpointConfiguration ConfigureNSB(IServiceCollection serviceCollection, string endpointName)
         {
 
             var endpointConfiguration = new EndpointConfiguration(endpointName);
