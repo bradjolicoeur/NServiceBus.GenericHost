@@ -1,13 +1,14 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System;
 using NServiceBus;
+using Microsoft.Extensions.Hosting;
 
 namespace NServiceBus.GenericHost.Template.Configuration
 {
     public static class EndpointConfigurations
     {
         //TODO: this can be moved to a shared assembly for the system
-        public static EndpointConfiguration ConfigureNSB(IServiceCollection serviceCollection, string endpointName)
+        public static IHostBuilder ConfigureNSB(this IHostBuilder builder, string endpointName)
         {
 
             var endpointConfiguration = new EndpointConfiguration(endpointName);
@@ -54,14 +55,19 @@ namespace NServiceBus.GenericHost.Template.Configuration
 
             endpointConfiguration.EnableInstallers(); //This will create transport and peristence objects
 
-            endpointConfiguration.UseContainer<ServicesBuilder>(
-            customizations: customizations =>
+            builder.ConfigureServices((context, serviceCollection) =>
             {
-                customizations.ExistingServices(serviceCollection);
+                endpointConfiguration.UseContainer<ServicesBuilder>(
+                   customizations: customizations =>
+                   {
+                       customizations.ExistingServices(serviceCollection);
+                   });
+
+                serviceCollection.AddSingleton<EndpointConfiguration>(endpointConfiguration);
+
             });
 
-            return endpointConfiguration;
-
+            return builder;
         }
     }
 }
